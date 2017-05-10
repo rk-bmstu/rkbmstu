@@ -73,6 +73,20 @@ nav a {
 	text-decoration: none;
 }
 
+@media (max-width:1200px){
+	nav {
+		padding: 0px 00px 0px 0px;
+	}
+	nav a {
+		font-size: 24px;
+		line-height: 90px;
+	}
+	nav h1 {
+		font-size: 40px;
+		line-height: 90px;
+	}
+}
+
 nav a img {
 	line-height: 35px;
 	display: inline-block;
@@ -81,6 +95,7 @@ nav a img {
 	width: 60px;
 	margin-right: -12.5px;
 	margin-left: -12.5px;
+	margin-top: -10px;
 }
 
 nav a:hover img {
@@ -96,9 +111,6 @@ nav a:hover {
 	background-color: white;
 }
 
-nav .nav-vk:hover {
-}
-
 /*----------------lead-in-----------------*/
 .lead-in {
 	z-index: 100;
@@ -112,6 +124,15 @@ nav .nav-vk:hover {
 	font-size: 24px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
+
+@media (max-width:1200px){
+	.lead-in {
+		padding: 14px 33px 14px 30px; 
+		width: 440px;
+		font-size: 20px;
+	}
+}
+
 
 .lead-in p:first-child {
 	color: #707e88;
@@ -149,6 +170,20 @@ nav .nav-vk:hover {
 
 .bolo a:hover {
 	background-color: rgba(255,255,255,0.3);
+}
+
+@media (max-width:1200px){
+	.bolo {
+		padding: 607px 0px 170px 130px;
+	}
+	.bolo p {
+		font-size: 26px;
+	}
+	.bolo a {
+		width: 230px;
+		font-size: 20px;
+		line-height: 38px;
+	}
 }
 
 
@@ -251,6 +286,13 @@ nav .nav-vk:hover {
 	.minor-departments .department-label h3 {
 		font-size: 32px;
 		margin-bottom: 20px;
+	}
+}
+
+@media (max-width:1000px){
+	.minor-departments .department-label {
+		font-size: 17px;
+		padding: 31px 15px 14px 25px;
 	}
 }
 
@@ -387,19 +429,19 @@ nav .nav-vk:hover {
 
 @media (max-width:1600px){
 	.shredding {
-		margin-left: -500px;
+		margin-left: -450px;
 		top: 200px;
 	}
 	.course {
-		margin-left:-100px;
+		margin-left:-150px;
 		top: 650px;
 	}
 	.rotor {
-		margin-left: -500px;
+		margin-left: -450px;
 		top: 900px;
 	}
 	.test {
-		margin-left: -100px;
+		margin-left: -150px;
 		top: 1350px;
 	}
 	.nii {
