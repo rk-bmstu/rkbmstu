@@ -1,0 +1,131 @@
+/*GLOBAL*/
+body 
+{
+    margin:0px;
+    padding:0px;
+    background-color:#333343;
+}
+div
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*НАРЕЗКА*/
+.head{margin-top:17px; display:block;}
+.head_img{width:1000px; height:204px; background:url('/nii/img/head.jpg') no-repeat; float:left; display:block;}
+.right_div_1{height:52px; background:#d6d6d6; margin-left:1000px; display:block;}
+.right_div_2{height:38px; background:#f6f6f6; margin-left:1000px; display:block;}
+.right_div_3{height:114px; background:#d6d6d6; margin-left:1000px; display:block;}
+.left{float:left; width:205px; background:url('/nii/img/bg.jpg') no-repeat;}
+.content_div_1{margin-left:205px; background:url('/nii/img/bg_left.jpg') no-repeat 86px 0px; padding: 30px;}
+.content_div_2{background:url('/nii/img/top_angl.jpg') no-repeat;}
+.content_div_3{background:url('/nii/img/bottom_angl.jpg') no-repeat 100% 100%; padding:20px;}
+
+/*MENU*/
+.menu a
+{
+    color:#BBB;
+    font:normal 15px "Times New Roman",Times, seri;
+    text-decoration:none;
+}
+.menu a:link {text-decoration:none}
+.menu a:visited {text-decoration:none}
+.menu a:hover
+{
+    text-decoration:none;
+    color:#EEE;
+}
+.menu a:active {color:#FFFFFF}
+ul.menu 
+{
+    list-style-type:none;
+    margin: 0px;
+    padding:20px 0px 0px 5px;
+    text-align:center;
+}
+.menu div
+{
+    width:200px;
+    height:20px;
+    background:url("/nii/img/hl.png") no-repeat;
+    background-position:center;
+}
+
+/*ADRES*/
+.adres {
+	color : #AFAFAF;
+	margin:70px 0px 30px 15px;
+	font: bold 11px Tahoma,Verdana,Arial;
+	text-align: left;
+}
+.adres:hover{color:#FFF}
+
+/*CONTENT*/
+.content
+{
+    background-color: #333343;
+    color:#d6d6d6;
+    font:16px "Times New Roman",Times, serif;
+    text-align:justify;
+}
+
+
+.content a
+{
+    color:#BBB;
+    font:normal 15px "Times New Roman",Times, serif;
+    text-decoration:underline;
+}
+.content a:link 
+{
+    color:#FFF;
+}
+.content a:visited 
+{
+    color:#999;
+    margin:0px; padding:0px;
+}
+.content a:hover
+{
+    color:#EEE;
+}
+.content a:active 
+{
+    color:#FFF;
+}
+
+
+.content h1
+{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:50px;
+}
+.content h2
+{
+    font-size:20px;
+    font-weight:400;
+    padding:10px 0px 5px 0px;
+}
+.content h3
+{
+    font-size:16px;
+    padding:10px 0px 5px 0px;
+}
+
+
+.alter_bg
+{
+    background-color: #667;
+}
+.content ol 
+{
+     list-style-type:upper-alpha; 
+     margin:0px 0px 0px 50px; 
+     padding:0px;
+}
+.content ol li
+{
+    margin-top:15px;
+}

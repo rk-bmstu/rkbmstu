@@ -203,6 +203,7 @@ nav .nav-vk:hover {
 	justify-content: space-between;
 }
 
+
 .department-label h3 {
 	font-family: "PT Mono";
 	font-size: 50px;
@@ -211,6 +212,46 @@ nav .nav-vk:hover {
 	display: inline-block;
 	border-bottom: 1px solid white;
 	padding-bottom: 13px;
+}
+
+@media (max-width:1850px){
+	.department-label {
+		padding: 41px 25px 24px 45px;
+	}
+}
+
+@media (max-width:1750px){
+	.department-label {
+		font-size: 24px;
+	}
+}
+
+@media (max-width:1500px){
+	.department-label {
+		width: 411px;
+		height: 354px;
+		font-size: 20px;
+	}
+	.department-label h3 {
+		font-size: 40px;
+		margin-bottom: 25px;
+	}
+	.minor-departments .department-label {
+		height: 404px;
+	}
+}
+
+@media (max-width:1200px){
+	.minor-departments .department-label {
+		width: 411px;
+		height: 354px;
+		font-size: 18px;
+		padding: 31px 15px 14px 35px;
+	}
+	.minor-departments .department-label h3 {
+		font-size: 32px;
+		margin-bottom: 20px;
+	}
 }
 
 .department-label a
@@ -239,13 +280,6 @@ nav .nav-vk:hover {
 	align-content: center;
 	padding: 0px 20px 0px 20px;
 	overflow-x: hidden;
-}
-
-@media (max-width:1257px){
-	.major-departments {
-		justify-content: flex-start;
-		overflow-x: auto;
-	}
 }
 
 .minor-departments {
@@ -333,7 +367,7 @@ nav .nav-vk:hover {
 	top: 440px;
 	width: 700px;
 	height: 400px;
-	background-image: url('img/nii-rotor.png');
+	background-image: url('img/rk6.png');
 	background-size:cover;
 }
 .course {
