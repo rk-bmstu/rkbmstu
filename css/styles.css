@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+/*---------------styles-----------------*/
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0px;
+	background-color: #F6F9FA;
+	overflow-x: hidden;
+	font-family: "PT Sans";
+}
+
+/*/------------------------------structure----------------------------------/*/
+
+header {
+	height: 110px;
+	background-color: rgba(255,255,255,0.85);
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	position: fixed;
+	z-index: 9999;
+	top:0;
+	left: 0;
+	width: 100%;
+}
+
+#top {
+	
+}
+
+#major {
+	width: 100%;
+	background-image: url(../img/vostok.png);
+	margin-top: calc(-125px - 50px);
+	padding-bottom: calc(109px + 50px);
+}
+
+#minor {
+	width: 100%;
+	margin-top: calc(-109px - 50px);
+	padding-bottom: calc(86px + 50px);
+}
+
+#nii {
+	width: 100%;
+	background-image: url(../img/part.png);
+	padding-top: calc(-86px - 50px);
+	padding-bottom: calc(86px + 50px);
+}
+
+#robot {
+	width: 100%;
+	background-image: url(../img/track.png);
+	background-position: center;
+	padding-top: calc(-86px - 50px);
+}
+
+footer{
+	height: 500px;
+	background-color: #23232B;
+}
+
+/*---------------header-----------------*/
+
+nav {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    transition: all 0.3s;
+	margin: 0px;
+}
+
+nav h1 {
+	background-image: url("../favicon.png");
+	background-repeat: no-repeat;
+	background-position: 0px 50%;
+	padding: 0px 0px 0px 80px;
+	margin: 0px 45px 0px 45px;
+	line-height: 110px;
+	font-size: 50px;
+	font-family: "PT Mono";
+    transition: all 0.3s;
+}
+
+nav a {
+	white-space:nowrap;
+	padding: 0px 10px 0px 45px;
+	display: block;
+	line-height: 110px;
+	vertical-align: middle;
+	color: #2D373C;
+	font-size: 28px;
+	text-decoration-color: rgba(255,255,255,0.0);
+	text-decoration: none;
+    transition: all 0.3s;
+}
+
+nav a img {
+	line-height: 35px;
+	display: inline-block;
+	opacity: 0;
+	transition: opacity 0.3s, width 0.3s, margin-right 0.3s, margin-left 0.3s;
+	width: 60px;
+	margin-right: -12.5px;
+	margin-left: -12.5px;
+}
+
+nav a:hover img {
+	opacity: 1;
+	text-decoration: underline;
+	text-decoration-color: rgba(255,255,255,1.0);
+	margin-right: 0px;
+	margin-left: 0px;
+	width: 35px;
+}
+
+nav a:hover {
+	background-color: white;
+}
+
+nav .nav-vk:hover {
+}
+
+/*---------------top-----------------*/
+
+.lead {
+	width: 610px;
+	height: 310px;
+	background-color: #f9f9f9;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	position: absolute;
+	right: 0;
+	top: 238px;
+	z-index: 100;
+}
+
+.news {
+	position: relative;
+	height: 1080px;
+	background-image: url('../img/cover.jpg');
+	background-position: center;
+}
+
+.news-outer {
+	background-color: rgba(35, 35, 43, 0.4);
+	height: 100%;
+}
+
+.news-inner {
+	position: relative;
+	max-width: 280px;
+	top:720px;
+	left:280px;
+}
+
+/*----------------major-----------------*/
+/*                  +                   */
+/*----------------major-----------------*/
+
+.major-departments, .minor-departments {
+	margin: auto;
+}
+
+@media all and (max-width:1060px) {
+	.major-departments {
+	width: 530px;
+	}
+	
+	.minor-departments {
+	width: 530px;
+	}
+	
+	.outer.hidden {
+	display: none;
+	}
+	
+	.title {
+		width: 100%;
+		display: block;
+	}
+	
+	.left, .right {
+		left:0;
+		right:0;
+	}
+	
+	.narrow {
+		max-width: 100%;
+	}
+}
+
+@media all and (min-width:1060px) and (max-width:1600px) {
+	.minor-departments {
+	width: 1060px;
+	}
+	.major-departments {
+		width: 1060px;
+	}
+	.outer.hidden {
+	display: none;
+	}
+}
+
+@media all and (min-width:1600px) {
+
+	.minor-departments {
+		width: 1600px;
+	}
+	
+	.major-departments {
+		width: 1060px;
+
+	}
+}
+
+.rk1 {
+	background-image: url('../img/rk1.png'); 
+	background-color: #2c353a;
+}
+.rk2 {
+	background-image: url('../img/rk2.png'); 
+	background-color: #6d7d88;
+}
+.rk3 {
+	background-image: url('../img/rk3.png'); 
+	background-color: #2c353a;
+}
+
+.rk4 {
+	background-image: url('../img/rk4.png'); 
+	background-color: #91292c;
+}
+.rk5 {
+	background-image: url('../img/rk5.png'); 
+	background-color: #293a2c;
+}
+.rk6 {
+	background-image: url('../img/rk6.png'); 
+	background-color: #003e6e;
+}
+.rk9 {
+	background-image: url('../img/rk9.png'); 
+	background-color: #976317;
+}
+
+/*-----------------nii-----------------------*/
+
+.nii1{
+	background-image: url('../img/nii1a.png'); 
+}
+
+.nii2{
+	background-image: url('../img/nii2.png'); 
+
+}
+
+.nii3{
+	background-image: url('../img/nii3.png'); 
+}
+
+.nii4{
+	background-image: url('../img/nii4.png'); 
+}
+
+/*-----------------robot-----------------------*/
+
+/*-----------------footer-----------------------*/
+
+
