@@ -22,6 +22,25 @@ header {
 	background-repeat: no-repeat;
 	background-color: #F3F3F3;
 	background-image: url('img/cover.jpg');
+	height: 1100px;
+	overflow: hidden;
+}
+
+.header-bg-cover {
+	background-color: rgba(35, 35, 43, 0.4);
+	position: relative;
+	top:0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+
+@media (max-width: 1200px)
+{
+	header {
+		background-position: 50% -370px;
+	}
 }
 
 content {
@@ -39,7 +58,6 @@ nav {
 	position: relative;
 	top: 0px;
 	left: 0px;
-	right: 0px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -68,12 +86,13 @@ nav a {
 	vertical-align: middle;
 	color: #2D373C;
 	font-size: 28px;
+	overflow:hidden;
 	transition: background-color 0.3s, text-decoration-color 0.3s;
 	text-decoration-color: rgba(255,255,255,0.0);
 	text-decoration: none;
 }
 
-@media (max-width:1200px){
+@media (max-width:1500px){
 	nav {
 		padding: 0px 00px 0px 0px;
 	}
@@ -120,34 +139,34 @@ nav a:hover {
 	top: 238px;
 	background-color: white;
 	width: 640px;
-	padding: 44px 73px 44px 70px; 
+	padding: 44px 0px 44px 0px; 
 	font-size: 24px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 @media (max-width:1200px){
 	.lead-in {
-		padding: 14px 33px 14px 30px; 
-		width: 440px;
-		font-size: 20px;
+		width: 100%;
+		top: 730px;
 	}
 }
-
+.lead-in p {
+	margin: 0px 73px 0px 70px; 
+}
 
 .lead-in p:first-child {
 	color: #707e88;
-	padding-bottom: 30px; 
+	padding-bottom: 30px;
 	border-bottom: 2px solid #d4d7da;
 }
 /*----------------bolo-----------------*/
 .bolo {
 	z-index: 99;
-	position: relative;
-	left: 0px;
-	padding: 607px 0px 170px 280px;
+	position: absolute;
+	left: 170px;
+	top: 607px;
 	color: white;
 	margin-bottom: 0px;
-	background-color: rgba(35, 35, 43, 0.4);
 }
 
 .bolo p {
@@ -174,7 +193,8 @@ nav a:hover {
 
 @media (max-width:1200px){
 	.bolo {
-		padding: 607px 0px 170px 130px;
+		top: 300px;
+		left: 100px;
 	}
 	.bolo p {
 		font-size: 26px;
@@ -198,11 +218,10 @@ nav a:hover {
 {
 	z-index: 100;
 	position: relative;
-	padding: 51px 40px 51px 80px;
-	width: 480px;
+	padding: 51px 0px 51px 0px;
+	width: 800px;
 	margin: -130px 200px 20px 120px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
-	font-size: 24px;
 }
 
 .major-division-title {
@@ -212,13 +231,28 @@ nav a:hover {
 
 .minor-division-title {
 	margin-left: 100%;
-	transform: translate(-720px,0px);
+	transform: translate(-920px,0px);
 	background-color: white;
 }
 
 .major-division-title h2, .minor-division-title h2 {
-	margin:0px 0px 31px 0px;
+	margin:0px 40px 31px 80px;
 	font-size: 36px;
+}
+
+.major-division-title p, .minor-division-title p {
+	margin: 0px 40px 0px 80px;
+	font-size: 24px;
+}
+
+@media (max-width:1200px){
+	.major-division-title, .minor-division-title
+	{
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+		transform: translate(0px,0px);
+	}
 }
 
 /*----------------departments-----------------*/
@@ -254,53 +288,6 @@ nav a:hover {
 	padding-bottom: 13px;
 }
 
-@media (max-width:1850px){
-	.department-label {
-		padding: 41px 25px 24px 45px;
-	}
-}
-
-@media (max-width:1750px){
-	.department-label {
-		font-size: 24px;
-	}
-}
-
-@media (max-width:1500px){
-	.department-label {
-		width: 411px;
-		height: 354px;
-		font-size: 20px;
-	}
-	.department-label h3 {
-		font-size: 40px;
-		margin-bottom: 25px;
-	}
-	.minor-departments .department-label {
-		height: 404px;
-	}
-}
-
-@media (max-width:1200px){
-	.minor-departments .department-label {
-		width: 411px;
-		height: 354px;
-		font-size: 18px;
-		padding: 31px 15px 14px 35px;
-	}
-	.minor-departments .department-label h3 {
-		font-size: 32px;
-		margin-bottom: 20px;
-	}
-}
-
-@media (max-width:1000px){
-	.minor-departments .department-label {
-		font-size: 17px;
-		padding: 31px 15px 14px 25px;
-	}
-}
-
 .department-label a
 {
 	display: block;
@@ -332,6 +319,7 @@ nav a:hover {
 .minor-departments {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 /*----------------department labels----------------*/
@@ -377,10 +365,6 @@ nav a:hover {
 	position:relative; 
 	height: 1000px;
 	margin-bottom:0px;
-}
-
-.nii .major-division-title {
-	width:800px;
 }
 
 .nii-label {
@@ -451,9 +435,6 @@ nav a:hover {
 	}
 	.nii {
 		height: 1600px;
-	}
-	.nii .major-division-title {
-		width:600px;
 	}
 }
 /*----------------hon-split------------------*/
