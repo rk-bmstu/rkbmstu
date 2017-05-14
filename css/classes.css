@@ -10,24 +10,90 @@
     background-color: #292933;
     float: left;
     left: 135px;
+    margin-right: 50%;
 }
 
 .right {
     background-color: #ffffff;
     float: right;
     right: 135px;
+    margin-left: 50%;
 }
 
 .fix-margin {
     margin-top: -86px !important;
 }
 
+.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    height: 50px;
+    line-height: 50px;
+}
+
+.scrolled .dimmer:hover {
+        background-color: #EBF0F5;
+}
+
 
 /*---------------elements-----------------*/
+
+.scrolled .logo {
+    font-size: 40px;
+}
+
+.scrolled img {
+    max-height: 42px;
+    margin-top:-5px;
+}
+
+.scrolled .menu {
+    font-size: 24px;
+    border-color: #EBF0F5
+}
+
+.logo {
+    color: #2D373C;
+    font-size: 50px;
+    font-family: "PT Mono";
+    line-height: inherit;
+    flex-grow: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+img {
+    vertical-align: middle;
+    margin-top:-10px;
+    max-height: 50px;
+}
+
+.menu {
+    position: relative;
+    white-space: nowrap;
+    display: block;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #2D373C;
+    font-size: 28px;
+    flex-grow: 1;
+    text-align: center;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #C4C8CC;
+}
+
+.dimmer:hover {
+    background-color: #ffffff;
+}
 
 .container {
     width: 100%;
     overflow: auto;
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .title {

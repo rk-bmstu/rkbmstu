@@ -15,9 +15,6 @@ body {
 /*/------------------------------structure----------------------------------/*/
 
 header {
-    height: 110px;
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -63,6 +60,9 @@ footer {
 /*---------------header-----------------*/
 
 nav {
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     position: relative;
     top: 0px;
     left: 0px;
@@ -70,60 +70,10 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transition: all 0.3s;
+    transition: 0.1s;
     margin: 0px;
-}
-
-nav h1 {
-    background-image: url("../favicon.png");
-    background-repeat: no-repeat;
-    background-position: 0px 50%;
-    padding: 0px 0px 0px 80px;
-    margin: 0px 45px 0px 45px;
     line-height: 110px;
-    font-size: 50px;
-    font-family: "PT Mono";
-    transition: all 0.3s;
 }
-
-nav a {
-    white-space: nowrap;
-    padding: 0px 10px 0px 45px;
-    display: block;
-    line-height: 110px;
-    vertical-align: middle;
-    color: #2D373C;
-    font-size: 28px;
-    text-decoration-color: rgba(255, 255, 255, 0.0);
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-nav a img {
-    line-height: 35px;
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 0.3s, width 0.3s, margin-right 0.3s, margin-left 0.3s;
-    width: 60px;
-    margin-right: -12.5px;
-    margin-left: -12.5px;
-}
-
-nav a:hover img {
-    opacity: 1;
-    text-decoration: underline;
-    text-decoration-color: rgba(255, 255, 255, 1.0);
-    margin-right: 0px;
-    margin-left: 0px;
-    width: 35px;
-}
-
-nav a:hover {
-    background-color: white;
-}
-
-nav .nav-vk:hover {}
-
 
 /*---------------top-----------------*/
 
@@ -142,7 +92,8 @@ nav .nav-vk:hover {}
     position: relative;
     height: 1080px;
     background-image: url('../img/cover.jpg');
-    background-position: center;
+    background-position:center;
+    background-size: cover;
 }
 
 .news-outer {
@@ -168,7 +119,7 @@ nav .nav-vk:hover {}
 
 .major-departments,
 .minor-departments {
-    margin: auto;
+    margin: 0 auto;
 }
 
 @media all and (max-width:1060px) {
@@ -207,12 +158,24 @@ nav .nav-vk:hover {}
     }
 }
 
-@media all and (min-width:1600px) {
+@media all and (min-width:1600px) and (max-width:2500px) {
     .minor-departments {
         width: 1600px;
     }
     .major-departments {
         width: 1060px;
+    }
+}
+
+@media all and (min-width:2500px) {
+    .minor-departments {
+        width: 100vw;
+    }
+    .major-departments {
+        width: 100vw;
+    }
+    .outer.hidden {
+        display: none;
     }
 }
 
