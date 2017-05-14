@@ -124,10 +124,10 @@ nav {
 
 @media all and (max-width:1060px) {
     .major-departments {
-        width: 530px;
+        width: 100vw;
     }
     .minor-departments {
-        width: 530px;
+        width: 100vw;
     }
     .outer.hidden {
         display: none;
@@ -143,6 +143,15 @@ nav {
     }
     .narrow {
         max-width: 100%;
+    }
+    
+    .outer {
+        width: calc(100vw - 20px);
+        height: 100%;
+    }
+    
+    .area {
+        max-width: 500px;
     }
 }
 
