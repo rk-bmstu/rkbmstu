@@ -6,23 +6,36 @@ body {
     height: 100%;
     margin: 0;
     padding: 0px;
-    background-color: #F6F9FA;
     overflow-x: hidden;
     font-family: "PT Sans";
 }
+/*
+.wrapper {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: #F6F9FA;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+}*/
 
 
 /*/------------------------------structure----------------------------------/*/
 
 header {
+    /*position: fixed;*/
     position: fixed;
-    z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 200;
 }
 
-#top {}
+#top {
+
+}
 
 #major {
     width: 100%;
@@ -59,11 +72,11 @@ footer {
 
 /*---------------header-----------------*/
 
-nav {
+#nav {
     height: 110px;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    position: relative;
+    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -73,7 +86,164 @@ nav {
     transition: 0.1s;
     margin: 0px;
     line-height: 110px;
+    flex-direction: row;
+        z-index: 201;
+    width: 100%;
+
+
 }
+
+
+/*
+.hamburger {
+    display: none;
+    float: left;
+    left: 0px;
+}*/
+
+.logo2 {
+    display: none;
+}
+/*
+#side {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+*/
+
+/* Navigation Menu - Background */
+
+#side {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    background: #23232B;
+    overflow:auto;
+overflow-y:scroll;
+}
+
+
+/* Navigation Menu - List items */
+
+.nav-item {
+    /* non-critical appearance styles */
+    width: 300px;
+    /*
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #000;*/
+}
+
+.nav-item a {
+    /* non-critical appearance styles */
+    display: block;
+    /*padding: 1em;*/
+    /*background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);*/
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+    color: #c74438;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(75, 20, 20, 0.65) 100%);
+}
+
+
+/* Site Wrapper - Everything that isn't navigation */
+
+.wrapper {
+    /* Critical position and size styles */
+    min-height: 100%;
+    min-width: 100%;
+    /*background-color: #F6F9FA;
+    /* Needs a background or else the nav will show through */
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    /* non-critical apperance styles */
+    background-image: linear-gradient(135deg, rgb(254, 255, 255) 0%, rgb(221, 241, 249) 35%, rgb(160, 216, 239) 100%);
+    background-size: 200%;
+    overflow-x: hidden;
+}
+
+
+/* Nav Trigger */
+
+#hamburger {
+    /* critical styles - hide the checkbox input */
+    position: fixed;
+    clip: rect(0, 0, 0, 0);
+    float: left;
+    left: 0px;
+    width: 0;
+    height: 0;
+}
+
+label[for="hamburger"] {
+    /* critical positioning styles */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+    /* non-critical apperance styles */
+    height: 110px;
+    width: 110px;
+    cursor: pointer;
+    background-image: url(../icons/burger.svg);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}
+
+
+
+/* Make the Magic Happen */
+
+#hamburger + label,
+.wrapper,
+#nav{
+    transition: left 0.2s;
+}
+
+
+#hamburger:checked + label,
+#hamburger:checked ~ .wrapper,
+#hamburger:checked ~ .wrapper #nav
+{
+    left: 300px;
+}
+
+#hamburger:checked ~ #side{
+    left: 0;
+}
+
+/* Micro reset */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 
 /*---------------top-----------------*/
 
@@ -92,7 +262,7 @@ nav {
     position: relative;
     height: 1080px;
     background-image: url('../img/cover.jpg');
-    background-position:center;
+    background-position: center;
     background-size: cover;
 }
 
@@ -115,14 +285,14 @@ nav {
 /*                  +                   */
 
 
-/*----------------major-----------------*/
+/*----------------minor-----------------*/
 
 .major-departments,
 .minor-departments {
     margin: 0 auto;
 }
 
-@media all and (max-width:1060px) {
+@media all and (max-width:800px) {
     .major-departments {
         width: 100vw;
     }
@@ -144,106 +314,231 @@ nav {
     .narrow {
         max-width: 100%;
     }
-    
     .outer {
         width: calc(100vw - 20px);
         height: 100%;
     }
-    
     .area {
         max-width: 500px;
     }
+    /*.news {
+        height: 900px;
+    }*/
+    .news-inner {
+        /*top:570px;
+        left:25%;*/
+        position: relative;
+        top: 200px;
+        left: 80px;
+        float: left;
+    }
+    .menu {
+        display: none;
+    }
+    .logo {
+        display: none;
+        border-style: none;
+    }
+    .logo2 {
+        display: block;
+        width: 100%;
+    }
+    label[for="hamburger"] {
+        display: flex;
+    }
+    #side {
+        display: block;
+    }
+
+
+#nav {
+    display: block;
 }
 
+.lead {
+    width: 100vw;
+    height: auto;
+    position: relative;
+    top: 150px;
+    float: left;
+}
+
+.long-line {
+    width: 100%;
+}
+
+.news-outer {
+    height: 1000px;
+}
+
+.news {
+    height: inherit;
+}
+
+side {
+    display: block;
+    transition: 1s;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+}
+@media all and (min-width:800px) and (max-width:1060px) {
+    .outer {
+        width: calc(100vw / 2 - 20px);
+        height: inherit;
+    }
+    
+    .outer.hidden {
+        display: none;
+    }
+    
+    .logo {
+        font-size: 32px;
+    }
+    
+    .menu {
+        font-size: 24px;
+    }
+    
+    img {
+        max-height: 32px;
+        margin-top: -6px;
+    }
+    
+    .scrolled .logo {
+        font-size: 32px;
+    }
+    
+    .scrolled img {
+        max-height: 36px;
+        margin-top: -5px;
+    }
+    
+    .scrolled .menu {
+        font-size: 24px;
+        border-color: #EBF0F5
+    }
+    
+    .title {
+        width: 100%;
+        display: block;
+    }
+    
+    .left,
+    .right {
+        left: 0;
+        right: 0;
+    }
+    
+    .narrow {
+        max-width: 100%;
+    }
+    
+    .news {
+        height: 900px;
+    }
+    
+    .news-inner {
+        top: 570px;
+        left: 25%;
+    }
+    #hamburger:checked + label,/*
+#hamburger:checked ~ .wrapper,*/
+#hamburger:checked ~ .wrapper #nav
+{
+    left: 0;
+}
+
+#hamburger:checked ~ #side{
+    left: -300px;
+}
+}
 @media all and (min-width:1060px) and (max-width:1600px) {
     .minor-departments {
         width: 1060px;
     }
+    
     .major-departments {
         width: 1060px;
     }
+    
     .outer.hidden {
         display: none;
     }
 }
-
 @media all and (min-width:1600px) and (max-width:2500px) {
     .minor-departments {
         width: 1600px;
     }
+    
     .major-departments {
         width: 1060px;
     }
 }
-
 @media all and (min-width:2500px) {
     .minor-departments {
         width: 100vw;
     }
+    
     .major-departments {
         width: 100vw;
     }
+    
     .outer.hidden {
         display: none;
     }
 }
-
 .rk1 {
     background-image: url('../img/rk1.png');
     background-color: #2c353a;
 }
-
 .rk2 {
     background-image: url('../img/rk2.png');
     background-color: #6d7d88;
 }
-
 .rk3 {
     background-image: url('../img/rk3.png');
     background-color: #2c353a;
 }
-
 .rk4 {
     background-image: url('../img/rk4.png');
     background-color: #91292c;
 }
-
 .rk5 {
     background-image: url('../img/rk5.png');
     background-color: #293a2c;
 }
-
 .rk6 {
     background-image: url('../img/rk6.png');
     background-color: #003e6e;
 }
-
 .rk9 {
     background-image: url('../img/rk9.png');
     background-color: #976317;
 }
 
-
 /*-----------------nii-----------------------*/
-
 .nii1 {
     background-image: url('../img/nii1a.png');
 }
-
 .nii2 {
     background-image: url('../img/nii2.png');
 }
-
 .nii3 {
     background-image: url('../img/nii3.png');
 }
-
 .nii4 {
     background-image: url('../img/nii4.png');
 }
 
-
 /*-----------------robot-----------------------*/
-
 
 /*-----------------footer-----------------------*/
