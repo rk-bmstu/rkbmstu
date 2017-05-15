@@ -9,6 +9,8 @@ body {
     overflow-x: hidden;
     font-family: "PT Sans";
 }
+
+
 /*
 .wrapper {
     min-height: 100%;
@@ -34,7 +36,6 @@ header {
 }
 
 #top {
-
 }
 
 #major {
@@ -87,10 +88,8 @@ footer {
     margin: 0px;
     line-height: 110px;
     flex-direction: row;
-        z-index: 201;
+    z-index: 201;
     width: 100%;
-
-
 }
 
 
@@ -104,6 +103,8 @@ footer {
 .logo2 {
     display: none;
 }
+
+
 /*
 #side {
     display: none;
@@ -118,6 +119,7 @@ footer {
 }
 */
 
+
 /* Navigation Menu - Background */
 
 #side {
@@ -131,8 +133,8 @@ footer {
     z-index: 0;
     list-style: none;
     background: #23232B;
-    overflow:auto;
-overflow-y:scroll;
+    overflow: auto;
+    overflow-y: scroll;
 }
 
 
@@ -177,7 +179,8 @@ overflow-y:scroll;
     left: 0;
     z-index: 1;
     /* non-critical apperance styles */
-    background-image: linear-gradient(135deg, rgb(254, 255, 255) 0%, rgb(221, 241, 249) 35%, rgb(160, 216, 239) 100%);
+    /*background-image: linear-gradient(135deg, rgb(254, 255, 255) 0%, rgb(221, 241, 249) 35%, rgb(160, 216, 239) 100%);*/
+    background-color: #F6F9FA;
     background-size: 200%;
     overflow-x: hidden;
 }
@@ -213,26 +216,24 @@ label[for="hamburger"] {
 }
 
 
-
 /* Make the Magic Happen */
 
-#hamburger + label,
+#hamburger+label,
 .wrapper,
-#nav{
+#nav {
     transition: left 0.2s;
 }
 
-
-#hamburger:checked + label,
-#hamburger:checked ~ .wrapper,
-#hamburger:checked ~ .wrapper #nav
-{
+#hamburger:checked+label,
+#hamburger:checked~.wrapper,
+#hamburger:checked~.wrapper #nav {
     left: 300px;
 }
 
-#hamburger:checked ~ #side{
+#hamburger:checked~#side {
     left: 0;
 }
+
 
 /* Micro reset */
 
@@ -261,14 +262,19 @@ label[for="hamburger"] {
 .news {
     position: relative;
     height: 1080px;
-    background-image: url('../img/cover.jpg');
-    background-position: center;
-    background-size: cover;
+    background-color: rgba(35, 35, 43, 0.4);
+
+
 }
 
 .news-outer {
-    background-color: rgba(35, 35, 43, 0.4);
     height: 100%;
+    background-image: url('../img/cover.jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 100vh 100vw rgba(35, 35, 43, 0.4), 100vh 100vw rgba(35, 35, 43, 0.4);
+
+
 }
 
 .news-inner {
@@ -349,196 +355,187 @@ label[for="hamburger"] {
     #side {
         display: block;
     }
-
-
-#nav {
-    display: block;
+    #nav {
+        display: block;
+    }
+    .lead {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        top: 150px;
+        float: left;
+    }
+    .long-line {
+        width: 100%;
+    }
+    .news-outer {
+        height: 1000px;
+    }
+    .news {
+        height: inherit;
+    }
+    side {
+        display: block;
+        transition: 1s;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+    }
 }
 
-.lead {
-    width: 100vw;
-    height: auto;
-    position: relative;
-    top: 150px;
-    float: left;
-}
-
-.long-line {
-    width: 100%;
-}
-
-.news-outer {
-    height: 1000px;
-}
-
-.news {
-    height: inherit;
-}
-
-side {
-    display: block;
-    transition: 1s;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-}
-
-
-}
 @media all and (min-width:800px) and (max-width:1060px) {
     .outer {
         width: calc(100vw / 2 - 20px);
         height: inherit;
     }
-    
     .outer.hidden {
         display: none;
     }
-    
     .logo {
         font-size: 32px;
     }
-    
     .menu {
         font-size: 24px;
     }
-    
     img {
         max-height: 32px;
         margin-top: -6px;
     }
-    
     .scrolled .logo {
         font-size: 32px;
     }
-    
     .scrolled img {
         max-height: 36px;
         margin-top: -5px;
     }
-    
     .scrolled .menu {
         font-size: 24px;
         border-color: #EBF0F5
     }
-    
     .title {
         width: 100%;
         display: block;
     }
-    
     .left,
     .right {
         left: 0;
         right: 0;
     }
-    
     .narrow {
         max-width: 100%;
     }
-    
     .news {
         height: 900px;
     }
-    
     .news-inner {
         top: 570px;
         left: 25%;
     }
-    #hamburger:checked + label,/*
+    #hamburger:checked+label,
+    /*
 #hamburger:checked ~ .wrapper,*/
-#hamburger:checked ~ .wrapper #nav
-{
-    left: 0;
+    #hamburger:checked~.wrapper #nav {
+        left: 0;
+    }
+    #hamburger:checked~#side {
+        left: -300px;
+    }
 }
 
-#hamburger:checked ~ #side{
-    left: -300px;
-}
-}
 @media all and (min-width:1060px) and (max-width:1600px) {
     .minor-departments {
         width: 1060px;
     }
-    
     .major-departments {
         width: 1060px;
     }
-    
     .outer.hidden {
         display: none;
     }
 }
+
 @media all and (min-width:1600px) and (max-width:2500px) {
     .minor-departments {
         width: 1600px;
     }
-    
     .major-departments {
         width: 1060px;
     }
 }
+
 @media all and (min-width:2500px) {
     .minor-departments {
         width: 100vw;
     }
-    
     .major-departments {
         width: 100vw;
     }
-    
     .outer.hidden {
         display: none;
     }
 }
+
 .rk1 {
     background-image: url('../img/rk1.png');
     background-color: #2c353a;
 }
+
 .rk2 {
     background-image: url('../img/rk2.png');
     background-color: #6d7d88;
 }
+
 .rk3 {
     background-image: url('../img/rk3.png');
     background-color: #2c353a;
 }
+
 .rk4 {
     background-image: url('../img/rk4.png');
     background-color: #91292c;
 }
+
 .rk5 {
     background-image: url('../img/rk5.png');
     background-color: #293a2c;
 }
+
 .rk6 {
     background-image: url('../img/rk6.png');
     background-color: #003e6e;
 }
+
 .rk9 {
     background-image: url('../img/rk9.png');
     background-color: #976317;
 }
 
+
 /*-----------------nii-----------------------*/
+
 .nii1 {
     background-image: url('../img/nii1a.png');
 }
+
 .nii2 {
     background-image: url('../img/nii2.png');
 }
+
 .nii3 {
     background-image: url('../img/nii3.png');
 }
+
 .nii4 {
     background-image: url('../img/nii4.png');
 }
 
+
 /*-----------------robot-----------------------*/
+
 
 /*-----------------footer-----------------------*/

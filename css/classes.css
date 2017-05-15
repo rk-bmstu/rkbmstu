@@ -47,6 +47,20 @@
     border-top: 4px solid #C4C8CC;
 }
 
+.brighten {
+    position: absolute;
+    float: left;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.outer:hover .brighten {
+    filter: brightness(1.2);
+}
+
 
 /*---------------elements-----------------*/
 
@@ -103,6 +117,7 @@ img {
 
 .dimmer:hover {
     background-color: #ffffff;
+    transition: 0.3s;
 }
 
 .container {
@@ -128,6 +143,10 @@ img {
     margin-bottom: 44px;
     margin-left: 65px;
     margin-right: 65px;
+    position: relative;
+    float: left;
+    top: 0;
+    z-index: 2;
 }
 
 .outer {
@@ -138,7 +157,7 @@ img {
     position: relative;
     float: left;
     margin: 5px;
-    transition: 0.8s;
+    transition: 0.3s;
 }
 
 .outer.hidden {
@@ -146,8 +165,7 @@ img {
 }
 
 .outer:hover {
-    /*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transform: scale(1.005);*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
