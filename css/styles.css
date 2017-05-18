@@ -209,7 +209,7 @@ label[for="hamburger"] {
     height: 110px;
     width: 110px;
     cursor: pointer;
-    background-image: url(../icons/burger.svg);
+    background-image: url(../icons/burger.png);
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: center;
