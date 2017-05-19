@@ -11,40 +11,23 @@
     <meta property="og:url" content="http://rk.bmstu.ru/" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Факультет РК МГТУ им. Н.&nbsp;Э.&nbsp;Баумана" />
-    <link rel="stylesheet" href="/beta/css/classes.css">
-    <link rel="stylesheet" href="/beta/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans" rel="stylesheet">
-    <script src="/beta/js/scripts.js"></script>
-    <link rel="icon" type="image/png" href="/beta/favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="js/scripts.js"></script>
 </head>
 
 <body>
-    <input type="checkbox" id="hamburger" class="hamburger" />
-    <label for="hamburger" id="labelid"></label>
-    <div class="hamburger"></div>
-    <nav id="side">
-        <a class="nav-item" href="/beta">РК</a>
-        <a class="nav-item" href="/beta/structure">Структура</a>
-        <a class="nav-item" href="https://vk.com/priem_rk">Приёмная комиссия</a>
-        <a class="nav-item" href="https://vk.com/decanat_rk">Деканат</a>
-        <a class="nav-item" href="http://bmstu.ru">Календарь</a>
-        <a class="nav-item" href="http://bmstu.ru">Сайт МГТУ</a>
+    <div id="hamburger" class="hamburger" onclick="side()"></div>
+    <nav id="nav" class="side">
+        <a class="logo dimmer active" href="/"><img src="favicon.png">РК</a>
+        <a class="menu dimmer" href="structure">Структура</a>
+        <a class="menu dimmer" href="https://vk.com/priem_rk">Приёмная комиссия</a>
+        <a class="menu dimmer" href="https://vk.com/decanat_rk">Деканат</a>
+        <a class="menu dimmer" href="http://bmstu.ru">Календарь</a>
+        <a class="menu dimmer" href="http://bmstu.ru">Сайт МГТУ</a>
     </nav>
-    <div class="wrapper">
-        <header>
-            <nav id="nav">
-                <!--<a class="hamburger dimmer"><img class="svg" src="icons/burger.svg"></a>-->
-                <a class="logo logo2"><img src="/beta/favicon.png">РК</a>
-                <a class="logo dimmer active" href="/beta"><img src="favicon.png">РК</a>
-                <a class="menu dimmer" href="/beta/structure">Структура</a>
-                <a class="menu dimmer" href="https://vk.com/priem_rk">Приёмная комиссия</a>
-                <a class="menu dimmer" href="https://vk.com/decanat_rk">Деканат</a>
-                <a class="menu dimmer" href="http://bmstu.ru">Календарь</a>
-                <a class="menu dimmer" href="http://bmstu.ru">Сайт МГТУ</a>
-
-            </nav>
-
-        </header>
+    <div id="wrapper" class="wrapper">
         <div id="top">
             <a class="lead" href="speech/">
                 <article class="inner">
@@ -153,7 +136,7 @@
             </div>
         </div>
         <div id="nii">
-            <div class="title left fix-margin">
+            <div class="title left">
                 <div class="inner">
                     <div class="font32 white">Научно-исследовательский институт
                         <br> «Автоматизация производственных процессов»</div>
@@ -214,11 +197,12 @@
                             <div class="font32 white bold">Натурные испытания</div>
                         </div>
                         <div class="hidden brighten"></div>
-                    </a>                </div>
+                    </a>
+                </div>
             </div>
         </div>
         <div id="robot">
-            <div class="title right fix-margin">
+            <div class="title right">
                 <div class="inner">
                     <div class="font32 dark">Учебно-исследовательский центр
                         <br> «Робототехника»</div>
@@ -234,8 +218,6 @@
                 </div>
             </div>
         </div>
-        <footer>
-        </footer>
     </div>
 </body>
 
