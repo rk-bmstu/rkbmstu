@@ -88,7 +88,8 @@ img {
     text-align: center;
     border-left-style: solid;
     border-width: 1px;
-    border-color: #C4C8CC;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dimmer {
@@ -114,6 +115,7 @@ img {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     position: relative;
     margin-bottom: 5px;
+    transition: width 0s, height 0s;
 }
 
 .inner {
@@ -136,7 +138,7 @@ img {
     position: relative;
     float: left;
     margin: 5px;
-    transition: 0.3s;
+    transition: all 0.3s, width 0s, height 0s;
 }
 
 .hidden {
@@ -250,7 +252,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: "PT Sans";
-    background-color: #292933;
+    background-color: #23232B;
 }
 
 
@@ -302,6 +304,11 @@ footer {
 
 
 /*---------------header-----------------*/
+
+.wrapper {
+    transition: 0.2s;
+    overflow-x: hidden;
+}
 
 .side {
     height: 110px;
@@ -366,7 +373,7 @@ footer {
     right: 0;
     top: 238px;
     z-index: 100;
-    transition: 0.3s;
+    transition: all 0.3s, width 0s, height 0s;
 }
 
 .lead:hover {
@@ -408,7 +415,15 @@ footer {
     margin: 0 auto;
 }
 
-@media all and (max-width:800px) {
+@media all and (max-width:399px) {
+    #major,
+    #minor,
+    #nii {
+        padding-bottom: 20px;
+    }
+    .title {
+        margin-top: 0 !important;
+    }
     .major-departments {
         width: 100vw;
     }
@@ -439,22 +454,25 @@ footer {
     }
     .news-inner {
         position: relative;
-        top: 200px;
-        left: 80px;
+        top: 100px;
+        left: 20px;
         float: left;
     }
     .menu {
         float: left;
-        width: 300px;
-        left: -300px;
+        width: 200px;
+        left: -200px;
         text-align: left;
         margin-right: 200px;
         color: #ffffff;
         border-left: none;
         border-bottom-style: solid;
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
         transition: 0.2s;
         text-indent: 25px;
+        font-size: 18px;
+        top: -50px;
+        background-color: rgba(255, 255, 255, 0.1);
     }
     .menu:hover {
         background-color: rgba(255, 255, 255, 0.2);
@@ -470,35 +488,300 @@ footer {
     .logo {
         pointer-events: none;
         cursor: default;
+        font-size: 25px;
+    }
+    .logo img {
+        max-height: 25px;
     }
     .hamburger {
         display: flex;
+        height: 50px;
+        background-size: 25px
     }
     .side {
-        display: block;
+        height: 50px;
     }
     #nav {
         display: block;
         transition: 0.2s;
-    }
-    .wrapper {
-        transition: 0.2s;
+        line-height: 50px;
     }
     .lead {
         width: 100vw;
         height: auto;
         position: relative;
-        top: 150px;
+        top: 80px;
         float: left;
     }
     .long-line {
         width: 100%;
+        margin-bottom: 8px;
     }
     .news-outer {
-        height: 1100px;
+        height: 360px;
     }
     .news {
         height: inherit;
+    }
+    .inner {
+        margin: 12px 20px;
+    }
+    .moveRight {
+        transform: translateX(200px);
+        transition: 0.2s;
+    }
+    .glass {
+        width: 100px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .font50 {
+        font-size: 25px;
+    }
+    .font36 {
+        font-size: 18px;
+    }
+    .font32 {
+        font-size: 16px;
+    }
+    .font24 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+}
+
+@media all and (min-width:400px) and (max-width:560px) {
+    .major-departments {
+        width: 100vw;
+    }
+    .minor-departments {
+        width: 100vw;
+    }
+    .hidden {
+        display: none;
+    }
+    .title {
+        width: 100%;
+        display: block;
+    }
+    .left,
+    .right {
+        left: 0;
+        right: 0;
+    }
+    .narrow {
+        max-width: 100%;
+    }
+    .outer {
+        width: calc(100vw - 20px);
+        height: 100%;
+    }
+    .area {
+        max-width: 500px;
+    }
+    .news-inner {
+        position: relative;
+        top: 100px;
+        left: 40px;
+        float: left;
+    }
+    .menu {
+        float: left;
+        width: 300px;
+        left: -300px;
+        text-align: left;
+        margin-right: 200px;
+        color: #ffffff;
+        border-left: none;
+        border-bottom-style: solid;
+        border-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: 0.2s;
+        text-indent: 25px;
+        font-size: 24px;
+        top: -50px;
+    }
+    .menu:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .logo {
+        display: block;
+        width: 100%;
+    }
+    .active,
+    .scrolled .active {
+        border: none;
+    }
+    .logo {
+        pointer-events: none;
+        cursor: default;
+        font-size: 38px;
+    }
+    .logo img {
+        max-height: 38px;
+    }
+    .hamburger {
+        display: flex;
+        height: 50px;
+        background-size: 32px
+    }
+    .side {
+        height: 50px;
+    }
+    #nav {
+        display: block;
+        transition: 0.2s;
+        line-height: 50px;
+    }
+    .lead {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        top: 80px;
+        float: left;
+    }
+    .long-line {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .news-outer {
+        height: 650px;
+    }
+    .news {
+        height: inherit;
+    }
+    .inner {
+        margin: 20px 32px;
+    }
+    .glass {
+        width: 280px;
+        height: 32px;
+        line-height: 32px;
+    }
+    .font50 {
+        font-size: 38px;
+    }
+    .font36 {
+        font-size: 28px;
+    }
+    .font32 {
+        font-size: 24px;
+    }
+    .font24 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+}
+
+@media all and (min-width:560px) and (max-width:800px) {
+    .hidden {
+        display: none;
+    }
+    .title {
+        width: 100%;
+        display: block;
+    }
+    .left,
+    .right {
+        left: 0;
+        right: 0;
+    }
+    .narrow {
+        max-width: 100%;
+    }
+    .outer {
+        width: calc(100vw / 2 - 20px);
+        height: inherit;
+    }
+    .area {
+        max-width: 500px;
+    }
+    .news-inner {
+        position: relative;
+        top: 100px;
+        left: 80px;
+        float: left;
+    }
+    .menu {
+        float: left;
+        width: 300px;
+        left: -300px;
+        text-align: left;
+        margin-right: 200px;
+        color: #ffffff;
+        border-left: none;
+        border-bottom-style: solid;
+        border-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: 0.2s;
+        text-indent: 25px;
+        font-size: 24px;
+        top: -50px;
+    }
+    .menu:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .logo {
+        display: block;
+        width: 100%;
+    }
+    .active,
+    .scrolled .active {
+        border: none;
+    }
+    .logo {
+        pointer-events: none;
+        cursor: default;
+        font-size: 38px;
+    }
+    .logo img {
+        max-height: 38px;
+    }
+    .hamburger {
+        display: flex;
+        height: 50px;
+        background-size: 32px
+    }
+    .side {
+        height: 50px;
+    }
+    #nav {
+        display: block;
+        transition: 0.2s;
+        line-height: 50px;
+    }
+    .lead {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        top: 80px;
+        float: left;
+    }
+    .long-line {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .news-outer {
+        height: 650px;
+    }
+    .news {
+        height: inherit;
+    }
+    .inner {
+        margin: 20px 32px;
+    }
+    .font50 {
+        font-size: 38px;
+    }
+    .font36 {
+        font-size: 28px;
+    }
+    .font32 {
+        font-size: 24px;
+    }
+    .font24 {
+        font-size: 18px;
+        margin-bottom: 8px;
     }
 }
 
@@ -558,6 +841,9 @@ footer {
     }
     .major-departments {
         width: 1060px;
+    }
+    .hidden {
+        display: none;
     }
 }
 

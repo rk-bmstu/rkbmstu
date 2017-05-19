@@ -1,2 +1,5 @@
 # rkbmstu
-rk.bmstu.ru dev center
+
+Beta (better) branch of rk.bmstu.ru
+
+Made with <3 && JS
