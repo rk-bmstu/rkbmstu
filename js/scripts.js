@@ -3,50 +3,58 @@
 "use strict";
 
 
-// Highlighting current link in the navbar by adding "current" class //
+// From http://stackoverflow.com/a/43860705
+// "hidden" is the class of the overlay (fixed element) that has "position: fixed"
+// Call disableScroll() and enableScroll() to toggle
 
-function current() {
-	if (document.documentElement.clientWidth >= 800) {
-		var navLinks = document.querySelectorAll('#nav a'); // All links inside the nav
+function freeze(e) {
+	if (!document.getElementById("nav").contains(e.target)) {
+		e.preventDefault();
+	}
+}
 
-		for (var i = 0; i < navLinks.length; i++) {
-			var link = navLinks[i],
-				url = link.getAttribute('href');
-			if (window.location.href == url) {
-				link.classList.add('current');
-			}
+function disableScroll() {
+	document.body.classList.add('noScroll');
+
+	// Only accept touchmove from fixed-element
+	document.addEventListener('touchmove', freeze, false);
+
+	// Prevent background scrolling
+	document.getElementById("nav").addEventListener("touchmove", function (e) {
+		var top = this.scrollTop,
+			totalScroll = this.scrollHeight,
+			currentScroll = top + this.offsetHeight;
+
+		if (top === 0 && currentScroll === totalScroll) {
+			e.preventDefault();
+		} else if (top === 0) {
+			this.scrollTop = 1;
+		} else if (currentScroll === totalScroll) {
+			this.scrollTop = top - 1;
 		}
-	}
+	});
+	document.getElementById('nav').classList.add('yeahScroll');
 }
 
-
-// Fixing overflow //
-
-function fixScroll() {
-	var i = 0,
-		body = document.getElementsByTagName('body');
-
-	for (i = 0; i < body.length; i++) {
-		body[i].classList.toggle('noScroll');
-	}
-
-	document.getElementById('nav').classList.toggle('yeahScroll');
-}
-
-
-// Removing overflow //
-
-function removeScroll() {
-	var i = 0,
-		body = document.getElementsByTagName('body');
-
-	for (i = 0; i < body.length; i++) {
-		body[i].classList.remove('noScroll');
-	}
-
+function enableScroll() {
+	document.removeEventListener("touchmove", freeze);
+	document.body.classList.remove('noScroll');
 	document.getElementById('nav').classList.remove('yeahScroll');
 }
 
+function logoSrc() {
+	var i = 0,
+		logo = document.getElementsByClassName('logo');
+	for (i = 0; i < logo.length; i++) {
+		if (!document.getElementById('nav').classList.contains('active')) {
+			var img = logo[i].firstElementChild;
+			img.setAttribute('src', 'img/logo.png');
+		} else {
+			img = logo[i].firstElementChild;
+			img.setAttribute('src', 'img/logo-wh.png');
+		}
+	}
+}
 
 // Making hamburger menu work by adding "active" modifier class //
 
@@ -61,12 +69,16 @@ function active() {
 	for (i = 0; i < logo.length; i++) {
 		logo[i].classList.toggle('active');
 	}
+	logoSrc();
 
 	for (i = 0; i < menu.length; i++) {
 		menu[i].classList.toggle('active');
 	}
-
-	fixScroll();
+	if (!document.getElementById('nav').classList.contains('active')) {
+		enableScroll();
+	} else {
+		disableScroll();
+	}
 }
 
 
@@ -79,8 +91,9 @@ function removeActive() {
 	for (i = 0; i < everyActive.length; i++) {
 		everyActive[i].classList.remove('active');
 	}
-	removeScroll();
+	enableScroll();
 }
+
 
 // Making navbar change on scroll and resize //
 
@@ -100,25 +113,12 @@ function iFixit() {
 }
 
 
-// Setting top margin of title to half of its height, setting bottom padding of previous parent //
-
-function marginTop() {
-	var title = document.getElementsByClassName('title');
-	for (var i = 0; i < title.length; i++) {
-		title[i].style.marginTop = -(title[i].clientHeight / 2) + "px";
-	}
-	for (i = 0; i < title.length - 1; i++) {
-		title[i].parentElement.style.paddingBottom = (title[i + 1].clientHeight - 40) + "px";
-	}
-}
-
-
 // Load functions on scroll, resize and load //
 
-function autoLoad() {
-	marginTop();
-	current();
+function laterJS() {
+	logoSrc();
 	iFixit();
 }
 
-window.onscroll = window.onresize = window.onload = autoLoad;
+window.onload = window.onscroll = window.onresize = laterJS;
+
