@@ -127,7 +127,7 @@ function undim() {
 */
 
 Array.from(document.getElementsByClassName('outer')).forEach(function (element) {
-	element.addEventListener('mouseenter', function () {
+	element.addEventListener('mouseover', function () {
 		var darken = document.getElementById('darken');
 		darken.classList.add('dimmed');
 		element.classList.add('over');
@@ -135,7 +135,7 @@ Array.from(document.getElementsByClassName('outer')).forEach(function (element) 
 });
 
 Array.from(document.getElementsByClassName('outer')).forEach(function (element) {
-	element.addEventListener('mouseleave', function () {
+	element.addEventListener('mouseout', function () {
 		var darken = document.getElementById('darken');
 		darken.classList.remove('dimmed');
 		element.classList.remove('over');
