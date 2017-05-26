@@ -113,6 +113,46 @@ function iFixit() {
 }
 
 
+// Dim background on tile hover
+/*
+function dim() {
+	var darken = document.getElementById('darken');
+	darken.classList.add('dimmed');
+}
+
+function undim() {
+	var darken = document.getElementById('darken');
+	darken.classList.remove('dimmed');
+}
+*/
+
+Array.from(document.getElementsByClassName('outer')).forEach(function (element) {
+	element.addEventListener('mouseenter', function () {
+		var darken = document.getElementById('darken');
+		darken.classList.add('dimmed');
+		element.classList.add('over');
+	});
+});
+
+Array.from(document.getElementsByClassName('outer')).forEach(function (element) {
+	element.addEventListener('mouseleave', function () {
+		var darken = document.getElementById('darken');
+		darken.classList.remove('dimmed');
+		element.classList.remove('over');
+	});
+});
+
+
+/*
+for (var i = 0; i < document.getElementsByClassName('outer').length; i++) {
+	document.getElementsByClassName('outer')[i].addEventListener('mouseover', dim);
+
+}
+
+for (i = 0; i < document.getElementsByClassName('outer').length; i++) {
+	document.getElementsByClassName('outer')[i].addEventListener('mouseout', undim);
+}
+*/
 // Load functions on scroll, resize and load //
 
 function laterJS() {
@@ -121,4 +161,3 @@ function laterJS() {
 }
 
 window.onload = window.onscroll = window.onresize = laterJS;
-

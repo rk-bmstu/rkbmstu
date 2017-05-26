@@ -23,6 +23,8 @@
 	background-size: cover;
 }
 
+
+/*
 .brighten:after {
 	position: absolute;
 	top: 0;
@@ -34,9 +36,26 @@
 	opacity: 0;
 	background-color: rgba(255, 255, 255, .1);
 }
+*/
 
-.outer:hover .brighten:after {
+.darken {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: block;
+	z-index: 888;
+	position: fixed;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	transition: 3s;
+	opacity: 0;
+}
+
+.dimmed {
+	visibility: visible;
 	opacity: 1;
+	transition: 3s;
 }
 
 break {
@@ -126,16 +145,24 @@ section {
 	background-position: center;
 	background-size: cover;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+	z-index: 50;
+	transition-property: z-index;
+	transition-duration: 3s;
+	transition-timing-function: step-end;
+}
+
+.over {
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	z-index: 999;
+	transition-property: z-index;
+	transition-duration: 0s;
+	transition-timing-function: step-end;
 }
 
 .hidden {
 	visibility: hidden;
 	display: none;
-}
-
-.outer:hover {
-	cursor: pointer;
-	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .department {
@@ -287,7 +314,7 @@ footer {
 
 .nav {
 	position: fixed;
-	z-index: 201;
+	z-index: 9999;
 	top: 0;
 	right: 0;
 	left: 0;
