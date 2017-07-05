@@ -46,6 +46,11 @@ h1 {
 	}
 }
 
+@media all and (max-width:1059px) {
+	div {
+		background-image: url('/assets/img/back1000.png');
+	}
+}
 
 /*----------------1600—2500-----------------*/
 @media all and (min-width:1600px) and (max-width:2499px) {

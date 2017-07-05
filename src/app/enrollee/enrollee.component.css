@@ -1,3 +1,11 @@
-.content {
+content {
 	background-color: white;
+	color: #2D373C;
+	display: block;
+	margin: 0px;
+}
+
+content a {
+	text-decoration: underline;
+	color: #2D373C;
 }
