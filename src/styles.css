@@ -1,0 +1,107 @@
+body {
+	font-family: 'PT Sans';
+	overflow-x: hidden;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #23232b;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/*---------------fonts-----------------*/
+a {
+	text-decoration: none;
+}
+
+.font50 {
+	font-family: 'PT Mono';
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 19px;
+}
+
+.font36 {
+	font-size: 36px;
+	font-weight: normal;
+	margin-bottom: 19px;
+}
+
+.font32 {
+	font-size: 32px;
+	font-weight: normal;
+	margin-bottom: 19px;
+}
+
+.font24 {
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 19px;
+}
+
+.font14 {
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 12px;
+}
+
+/*----------------560—800-----------------*/
+@media all and (min-width:560px) and (max-width:799px) {
+	.font14 {
+		font-size: 11px;
+	}
+	.font24 {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+	.font32 {
+		font-size: 24px;
+	}
+	.font36 {
+		font-size: 28px;
+	}
+	.font50 {
+		font-size: 38px;
+	}
+}
+
+/*----------------400—560-----------------*/
+@media all and (min-width:400px) and (max-width:559px) {
+	.font14 {
+		font-size: 11px;
+	}
+	.font24 {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+	.font32 {
+		font-size: 24px;
+	}
+	.font36 {
+		font-size: 28px;
+	}
+	.font50 {
+		font-size: 38px;
+	}
+}
+
+
+.bold {
+	font-weight: bold;
+}
+
+.faded {
+	color: #888;
+}
+
+.white {
+	color: #fff;
+}
+
+.light {
+	color: #697882;
+}
+
+.dark {
+	color: #2d373c;
+}

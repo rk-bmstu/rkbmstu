@@ -1,0 +1,262 @@
+
+
+.logo {
+	font-family: 'PT Mono';
+	font-size: 50px;
+	line-height: inherit;
+	text-align: center;
+	vertical-align: middle;
+	color: #2d373c;
+	flex-grow: 1;
+	background-color: rgba(249, 249, 249, .85);
+	transition: background-color .2s;
+	z-index: 999;
+}
+
+.logo img {
+	max-height: 50px;
+	margin-top: -10px;
+	vertical-align: middle;
+}
+
+.menu {
+	font-size: 28px;
+	line-height: inherit;
+	position: relative;
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	color: #2d373c;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, .2);
+	border-left-style: solid;
+	flex-grow: 1;
+	transition: background-color .2s, max-height .2s;
+}
+
+/*---------------header-----------------*/
+
+
+.nav {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0;
+	transition: all 0s, transform .2s;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+	justify-content: space-around;
+	align-items: center;
+}
+
+.hamburger {
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 110px;
+	width: 110px;
+	transition: height .3s;
+	visibility: hidden;
+	cursor: pointer;
+}
+
+/*----------------mobile only-----------------*/
+@media all and (max-width:799px) {
+	.nav {
+		line-height: 50px;
+		display: flex;
+		box-shadow: none;
+		flex-direction: column;
+		justify-content: flex-start;
+		transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), background 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+		height: 50px;
+	}
+	.nav.active {
+		background-color: #000000;
+		height: 100vh;
+	}
+	.title {
+		display: block;
+		width: 100%;
+	}
+	.menu {
+		font-size: 18px;
+		float: left;
+		width: 100vw;
+		text-align: left;
+		text-indent: 45px;
+		color: #ffffff;
+		border-color: rgba(255, 255, 255, .1);
+		border-bottom-style: solid;
+		border-left: none;
+		flex-grow: 0;
+		top: 50px;
+		transition: visibility 0s, opacity .6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+		opacity: 0;
+		visibility: hidden;
+		background-color: rgba(249, 249, 249, .85);
+	}
+	.menu.active {
+		opacity: 1;
+		visibility: visible;
+		background-color: #000000;
+	}
+	.menu:hover {
+		background-color: #333333;
+	}
+	.logo {
+		cursor: default;
+		pointer-events: none;
+		display: block;
+		width: 100%;
+		flex-grow: 0;
+		font-size: 32px;
+	}
+	.logo img {
+		max-height: 32px;
+		margin-top: -6px;
+	}
+	.logo.active {
+		background-color: #000000;
+		color: #ffffff;
+		position: fixed;
+	}
+	.hamburger {
+		visibility: visible;
+		height: 50px;
+	}
+	.buns,
+	.buns:before,
+	.buns:after {
+		position: absolute;
+		height: 2px;
+		width: 20px;
+		background-color: rgb(45, 55, 60);
+		transform: rotate(0deg);
+		transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+		border-radius: 3px;
+	}
+	.buns {
+		/* Safari compatibility */
+		left: 45px;
+	}
+	.buns:before {
+		content: '';
+		top: -6px;
+	}
+	.buns:after {
+		content: '';
+		top: 6px;
+	}
+	.hamburger.active .buns:before {
+		transform: translateY(6px) rotate(45deg);
+		background-color: rgba(255, 255, 255, 1);
+	}
+	.hamburger.active .buns {
+		background-color: rgba(255, 255, 255, 0);
+		opacity: 1;
+	}
+	.hamburger.active .buns:after {
+		transform: translateY(-6px) rotate(-45deg);
+		background-color: rgba(255, 255, 255, 1);
+	}
+}
+
+
+/*----------------desktop only-----------------*/
+@media all and (min-width:800px) {
+	.nav {
+		line-height: 110px;
+		height: 110px;
+		transition: .2s;
+	}
+	.current {
+		border-top: 5px solid #fff;
+		border-bottom: 5px solid #fff;
+	}
+	.scrolled .current {
+		border-top: 4px solid #c4c8cc;
+		border-bottom: 4px solid #c4c8cc;
+	}
+	.scrolled .logo {
+		font-size: 40px;
+	}
+	.scrolled img {
+		max-height: 42px;
+		margin-top: -5px;
+	}
+	.scrolled .menu {
+		font-size: 24px;
+		border-color: #ebf0f5;
+	}
+	.scrolled {
+		line-height: 50px;
+		height: 50px;
+		transition: 0.2s;
+	}
+	.scrolled a {
+		background-color: rgba(255, 255, 255, 1);
+	}
+	.scrolled a:hover {
+		background-color: #ebf0f5;
+	}
+	.menu {
+		background-color: rgba(249, 249, 249, .85);
+	}
+	.menu:hover,
+	.logo:hover {
+		background-color: #fff;
+	}
+}
+
+
+/*----------------<399-----------------*/
+@media all and (max-width:399px) {
+	.title {
+		margin-top: 0 !important;
+	}
+	.logo {
+		font-size: 25px;
+	}
+	.logo img {
+		max-height: 25px;
+	}
+	.menu {
+		font-size: 18px;
+	}
+}
+
+
+/*----------------800—1060-----------------*/
+@media all and (min-width:800px) and (max-width:1059px) {
+	.logo {
+		font-size: 32px;
+	}
+	.menu {
+		font-size: 24px;
+	}
+	.logo img {
+		max-height: 32px;
+		margin-top: -6px;
+	}
+	.scrolled .logo {
+		font-size: 32px;
+	}
+	.scrolled img {
+		max-height: 36px;
+		margin-top: -5px;
+	}
+	.scrolled .menu {
+		font-size: 24px;
+		border-color: #ebf0f5;
+	}
+}
