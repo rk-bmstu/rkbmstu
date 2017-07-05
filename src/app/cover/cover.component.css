@@ -1,0 +1,55 @@
+div {
+	height:646.7px;
+	background-image: url('/assets/img/back.png');
+	background-size: cover;
+	background-position: 50% 30%;
+	position: relative;
+}
+
+h1 {
+	transform: translateY(-100%);
+	margin: 0px 0px 0px 0px;
+	padding: 0px 20px 40px 20px;
+	color: white;
+	position: relative;
+	top: 100%;
+	left: 0px;
+}
+
+/*----------------<400-----------------*/
+@media all and (max-width:399px) {
+	div {
+		height:500px;
+	}
+}
+
+
+/*----------------400-560-----------------*/
+@media all and (min-width:400px) and (max-width:559px) {
+	div {
+		height:200px;
+	}
+}
+
+/*----------------560—800-----------------*/
+@media all and (min-width:560px) and (max-width:799px) {
+	div {
+		height:300px;
+	}
+}
+
+
+/*----------------800—1060-----------------*/
+@media all and (min-width:800px) and (max-width:1059px) {
+	div {
+		height:400px;
+	}
+}
+
+
+/*----------------1600—2500-----------------*/
+@media all and (min-width:1600px) and (max-width:2499px) {
+	div {
+		height:800px;
+	}
+}

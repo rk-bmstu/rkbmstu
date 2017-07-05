@@ -9,6 +9,7 @@ import { MajorMenuComponent } from './major-menu/major-menu.component';
 import { NiiComponent } from './nii/nii.component';
 import { EnrolleeComponent } from './enrollee/enrollee.component';
 import { SpeechComponent } from './speech/speech.component';
+import { CoverComponent } from './cover/cover.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SpeechComponent } from './speech/speech.component';
     MajorMenuComponent,
     NiiComponent,
     EnrolleeComponent,
-    SpeechComponent
+    SpeechComponent,
+    CoverComponent
   ],
   imports: [
     RouterModule.forRoot([
