@@ -149,12 +149,12 @@ section {
 	background-color: #f6f9fa;
 }
 
-.nii {
+.sub {
 	width: 100%;
 	background-image: url(/assets/img/part.png);
 }
 
-.major, .minor,.nii {
+.major, .minor,.sub {
 	padding-bottom: 150px;
 }
 
@@ -250,7 +250,7 @@ section {
 @media all and (max-width:399px) {
 	.major,
 	.minor,
-	.nii {
+	.sub {
 		padding-bottom: 20px !important;
 	}
 	.outer {
@@ -410,18 +410,14 @@ section {
 
 /*-----------------nii-----------------------*/
 
-.nii1 {
-	background-image: url('/assets/img/nii1a.png');
+.robot {
+	background-image: url('/assets/img/robot.png');
 }
 
-.nii2 {
-	background-image: url('/assets/img/nii2.png');
+.autodesk {
+	background-image: url('/assets/img/autodesk.png');
 }
 
-.nii3 {
-	background-image: url('/assets/img/nii3.png');
-}
-
-.nii4 {
-	background-image: url('/assets/img/nii4.png');
+.nii {
+	background-image: url('/assets/img/nii.png');
 }
