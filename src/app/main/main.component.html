@@ -1,12 +1,12 @@
 <div id="wrapper" class="wrapper">
   <major-menu></major-menu>
   <div class="top">
-    <a class="lead" href="speech/">
+    <a class="lead" routerLink="/speech">
       <section>
         <div class="font24 light">“… обеспечить создание интегрированных автоматизированных систем проектирования и производства в машиностроении и приборостроении.”</div>
         <div class="long-line"></div>
         <div class="font24 dark">
-          Рукодитель факультета РК
+          Руководитель факультета РК
           <br/>Тимофеев Геннадий Алексеевич </div>
       </section>
     </a>
@@ -106,7 +106,7 @@
       </div>
     </div>
   </div>
-  <div class="sub" *ngIf=isDevMode>
+  <div class="sub" *ngIf=isDevMode()>
     <div class="title left narrow">
       <section>
         <div class="font32 white">Периферийные подразделения факультета</div>

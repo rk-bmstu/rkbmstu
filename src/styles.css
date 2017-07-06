@@ -8,11 +8,23 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+content {
+	background-color: white;
+	color: #2D373C;
+	display: block;
+}
+
+content a {
+	text-decoration: underline;
+	color: #2D373C;
+}
+
 
 /*---------------fonts-----------------*/
 a {
 	text-decoration: none;
 }
+
 
 .font50 {
 	font-family: 'PT Mono';

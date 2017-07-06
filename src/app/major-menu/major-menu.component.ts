@@ -59,7 +59,7 @@ export class MajorMenuComponent implements OnInit {
       var navLinks = this.el.nativeElement.querySelectorAll('#nav a'); // All links inside the nav
 
       for (let link of navLinks) {
-        let url = link.getAttribute('href');
+        let url = link.getAttribute('routerlink');
         if (location.pathname == url) {
           link.classList.add('current');
         }

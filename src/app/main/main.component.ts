@@ -7,9 +7,9 @@ import { Component, OnInit, ElementRef, isDevMode } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  private isDevMode = isDevMode;
+  public isDevMode = isDevMode;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef) {   }
 
   ngOnInit() {
   }
