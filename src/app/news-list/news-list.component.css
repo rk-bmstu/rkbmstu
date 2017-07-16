@@ -1,0 +1,58 @@
+.novelty {
+	display: flex;
+	justify-content: flex-start;
+	margin: 20px 0px 0px 0px;
+	padding: 0px;
+}
+
+.image {
+	width: 150px;
+	height: 100px;
+	background-size: cover;
+	margin-right: 20px;
+	overflow: hidden;
+}
+
+a {
+	font-size: inherit;
+	color: inherit;
+}
+
+.novelty:hover h3, p:hover{
+	color: white;
+}
+
+h3 {
+	margin-top:0px;
+	padding-top: 0px;
+	transition: color 2s;
+}
+
+p, h2 {
+	transition: color 2s;
+}
+
+.news-list {
+	margin: 0px;
+	padding: 0px;
+}
+
+div:hover h2 {
+	color: white;
+}
+
+.novelty:hover .blind {
+	background-color: rgba(35, 35, 43, 0.0);
+}
+
+.blind {
+	background-color: rgba(35, 35, 43, 0.6);
+	transition: background-color 2s;
+	height: 100%;
+}
+
+.novelty img {
+	opacity: 0;
+	height: 100%;
+	width: 100%;
+}

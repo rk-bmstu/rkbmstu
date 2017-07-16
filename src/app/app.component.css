@@ -1,11 +1,15 @@
-footer {
+.underground {
 	line-height: 50px;
-	background-image: url(/assets/img/part.png);
 	text-align: center;
 	margin: 0px;
 	transition: color 2s;
 }
 
-footer:hover {
+.underground:hover {
 	color: white;
+}
+
+footer {
+	background-image: url(/assets/img/part.png);
+	background-position-x: 50%;
 }

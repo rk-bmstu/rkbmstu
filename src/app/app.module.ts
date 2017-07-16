@@ -10,6 +10,10 @@ import { NiiComponent } from './nii/nii.component';
 import { EnrolleeComponent } from './enrollee/enrollee.component';
 import { SpeechComponent } from './speech/speech.component';
 import { CoverComponent } from './cover/cover.component';
+import { NewsListComponent } from './news-list/news-list.component';
+
+import { NewsService } from './news.service';
+import { CssUrlPipe } from './css-url.pipe';
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { CoverComponent } from './cover/cover.component';
     NiiComponent,
     EnrolleeComponent,
     SpeechComponent,
-    CoverComponent
+    CoverComponent,
+    NewsListComponent,
+    CssUrlPipe
   ],
   imports: [
     RouterModule.forRoot([
@@ -45,7 +51,7 @@ import { CoverComponent } from './cover/cover.component';
 
     BrowserModule
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

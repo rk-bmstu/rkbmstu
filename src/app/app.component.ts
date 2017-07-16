@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  public isDevMode = isDevMode;
+  
+  prefooterHeight() {
+    let prefooter = document.getElementById('prefooter');
+    return prefooter ? (-prefooter.offsetHeight) + "px" : "50%";
+  }
 }

@@ -1,0 +1,13 @@
+<div>
+	<h2>Последние новости</h2>
+	<ul class="news-list">
+		<li class="novelty" *ngFor="let novelty of news">
+			<div class="image" [style.background-image]="novelty.image | cssUrl"><div class="blind"><img src={{novelty.image}}></div></div>
+			<div>
+				<a href="#"><h3>{{novelty.title}}</h3></a>
+				<p>{{novelty.script}}</p>
+				<p>{{novelty.time | date}}</p>
+			</div>
+		</li>
+	</ul>
+</div>

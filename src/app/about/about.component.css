@@ -1,0 +1,25 @@
+.two-column {
+	padding-top:50px;
+	padding-bottom:50px;
+	display: flex;
+	flex-wrap: wrap;
+	color: #888;
+	justify-content: space-around;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p, h3 {
+	transition: color 3s;
+}
+
+.darken:hover h3, p:hover, h3:hover {
+	color: white;
+}

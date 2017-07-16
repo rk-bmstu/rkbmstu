@@ -63,6 +63,15 @@ section {
 	float: left;
 }
 
+
+.break {
+	flex-basis: 100%;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+	display: none;
+}
+
 .outer {
 	position: relative;
 	float: left;
@@ -151,6 +160,7 @@ section {
 .sub {
 	width: 100%;
 	background-image: url(/assets/img/part.png);
+	background-position-x: 50%;
 }
 
 .major, .minor,.sub {
@@ -358,9 +368,19 @@ section {
 	}
 }
 
+/*----------------1060—1600-----------------*/
+@media all and (min-width:1060px) and (max-width:1599px) {
+	.break {
+		display: block;
+	}
+}
+
 
 /*----------------1600—2500-----------------*/
 @media all and (min-width:1600px) and (max-width:2499px) {
+	.break {
+		display: block;
+	}
 	.hidden {
 		display: block;
 	}
