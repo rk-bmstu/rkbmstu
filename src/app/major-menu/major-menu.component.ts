@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { LocationStrategy, Location } from '@angular/common';
+import { Router }   from '@angular/router';
 
 @Component({
   selector: 'major-menu',
@@ -8,15 +9,24 @@ import { LocationStrategy, Location } from '@angular/common';
 })
 export class MajorMenuComponent implements OnInit {
 
-  constructor(private location: Location, private el: ElementRef) { }
+  console() { return console; }
+
+  constructor(private location: Location, 
+              private el: ElementRef,
+              private router: Router)
+  {
+    router.events.subscribe((val) => {
+      this.current();
+    });
+  }
 
   ngOnInit() {
-    this.current();
 
 
     window.onload = window.onscroll = window.onresize = ()=> {
-      this.logoSrc();
+      this.logoSrcUpdate();
       this.iFixit();
+      this.current();
     };
   }
 
@@ -25,15 +35,14 @@ export class MajorMenuComponent implements OnInit {
     return this.el.nativeElement.getElementsByClassName(name);
   }
 
-  logoSrc() {
+  logoSrcUpdate() {
     let i = 0;
     let logo = this.getElementsByClassName('logo');
     for (i = 0; i < logo.length; i++) {
+      let img = logo[i].firstElementChild;
       if (!document.getElementById('nav').classList.contains('active')) {
-        var img = logo[i].firstElementChild;
         img.setAttribute('src', '/assets/img/logo.png');
       } else {
-        img = logo[i].firstElementChild;
         img.setAttribute('src', '/assets/img/logo-wh.png');
       }
     }
@@ -42,11 +51,9 @@ export class MajorMenuComponent implements OnInit {
 
   // Removing "active" modifier class from all elements //
   removeActive() {
-    var i = 0,
-      everyActive = this.getElementsByClassName('active');
-
-    for (i = 0; i < everyActive.length; i++) {
-      everyActive[i].classList.remove('active');
+    let everyActive = this.getElementsByClassName('current');
+    for (let active of everyActive) {
+      active.classList.remove('current');
     }
     document.removeEventListener("touchmove", () => { this.freeze });
     document.body.classList.remove('noScroll');
@@ -56,14 +63,21 @@ export class MajorMenuComponent implements OnInit {
   // Highlighting current link in the navbar by adding "current" class //
   current() {
     if (document.documentElement.clientWidth >= 800) {
-      var navLinks = this.el.nativeElement.querySelectorAll('#nav a'); // All links inside the nav
-
+      let navLinks = this.el.nativeElement.querySelectorAll('#nav a'); // All links inside the nav
+      let offset = 0;
+      let hilighter = document.getElementById("current-menu-item-mark");
       for (let link of navLinks) {
         let url = link.getAttribute('routerlink');
+        if (link && link.offsetWidth) {
+          offset += link.offsetWidth;
+        }
         if (location.pathname == url) {
-          link.classList.add('current');
+          hilighter.style.left = (offset - link.offsetWidth / 2) + "px";
+          hilighter.style.width = link.offsetWidth + "px";
+          return;
         }
       }
+      hilighter.style.width = "0px";
     }
   }
 
@@ -74,11 +88,9 @@ export class MajorMenuComponent implements OnInit {
 
     if (document.documentElement.clientWidth >= 800 && window.pageYOffset > 110) {
       nav.classList.add("scrolled");
-      this.removeActive();
     } else
     if (document.documentElement.clientWidth >= 800 && window.pageYOffset <= 110) {
       nav.classList.remove("scrolled");
-      this.removeActive();
     } else {
       nav.classList.remove("scrolled");
     }
@@ -94,26 +106,31 @@ export class MajorMenuComponent implements OnInit {
     }
   }
 
-  active() {
-    let i = 0;
-    let logo = this.getElementsByClassName('logo');
-    let menu = this.getElementsByClassName('menu');
+  deactive() {
+    this.setupActive("remove");
+    this.enableScroll();
+    this.logoSrcUpdate();
+  }
 
-    document.getElementById('hamburger').classList.toggle('active');
-    document.getElementById('nav').classList.toggle('active');
+  inactive() {
+    this.setupActive("add");
+    this.disableScroll();
+    this.logoSrcUpdate();
+  }
 
-    for (i = 0; i < logo.length; i++) {
-      logo[i].classList.toggle('active');
-    }
-    this.logoSrc();
+  setupActive(direction) {
+    let onactive = i => i.classList[direction]('active');
+    Array.prototype.forEach.call(this.getElementsByClassName('logo'), onactive);
+    Array.prototype.forEach.call(this.getElementsByClassName('menu'), onactive);
+    onactive(document.getElementById('hamburger'));
+    onactive(document.getElementById('nav'));
+  }
 
-    for (i = 0; i < menu.length; i++) {
-      menu[i].classList.toggle('active');
-    }
-    if (!document.getElementById('nav').classList.contains('active')) {
-      this.enableScroll();
+  switchActive() {
+    if (document.getElementById('nav').classList.contains('active')) {
+      this.deactive();
     } else {
-      this.disableScroll();
+      this.inactive();
     }
   }
 

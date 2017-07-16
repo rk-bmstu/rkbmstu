@@ -8,7 +8,7 @@
 	flex-grow: 1;
 	background-color: rgba(249, 249, 249, .85);
 	transition: background-color .2s;
-	z-index: 999;
+	z-index: 1999;
 }
 
 .logo img {
@@ -76,7 +76,6 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), background 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-		height: 50px;
 	}
 	.nav.active {
 		background-color: #000000;
@@ -176,14 +175,25 @@
 		line-height: 110px;
 		height: 110px;
 		transition: .2s;
+
 	}
-	.current {
-		border-top: 5px solid #fff;
-		border-bottom: 5px solid #fff;
+	.current-menu-item-mark {
+		width: 100%;
+		transform: translateX(-50%);
+		position: absolute;
+		top: 110px;
+		left: 0px;
+		background-color: #ffffff;
+		height: 5px;
+		z-index: 999;
+
+		transition: top .2s, left .3s, width .3s;
 	}
-	.scrolled .current {
-		border-top: 4px solid #c4c8cc;
-		border-bottom: 4px solid #c4c8cc;
+	.scrolled .current-menu-item-mark {
+		background-color: #c4c8cc;
+		height: 4px;
+		top: 50px;
+		width: 100px;
 	}
 	.scrolled .logo {
 		font-size: 40px;
