@@ -112,7 +112,6 @@
 	}
 	.logo {
 		cursor: default;
-		pointer-events: none;
 		display: block;
 		width: 100%;
 		flex-grow: 0;
