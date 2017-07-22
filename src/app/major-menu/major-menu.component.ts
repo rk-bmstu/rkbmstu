@@ -21,8 +21,6 @@ export class MajorMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
     window.onload = window.onscroll = window.onresize = ()=> {
       this.logoSrcUpdate();
       this.iFixit();

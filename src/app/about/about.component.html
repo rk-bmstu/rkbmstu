@@ -1,14 +1,14 @@
-<div class="two-column">
-	<news-list></news-list>
-	<div class="about">
-		<div class="darken">
-			<h3>Контакты</h3>
+<div class="font19 faded spaced-wrap two-column">
+	<news-list *ngIf="newsService.isNewsAllowed()" class="spaced"></news-list>
+	<div>
+		<div class="darken spaced">
+			<h3 class="nomargin">Контакты</h3>
 			<p>Телефон деканата <a href="tel:+74992636515">+7&nbsp;(499)&nbsp;263-65-15</a></p>
 			<p>Адрес института <a href="http://www.bmstu.ru/mstu/contacts/map/">г. Москва, 2-я Бауманская ул., д. 5, стр. 1</a></p>
 			<p>С большинством сотрудников деканата можно связаться с помощью <a href="https://vk.com/decanat_rk">группы в контакте</a></p>
 		</div>
-		<div class="darken">
-			<h3>Обратная связь</h3>
+		<div class="darken spaced">
+			<h3 class="nomargin">Обратная связь {{newsCount}}</h3>
 			<p>По аспирантуре <a href="mailto:i.a.kiselev@yandex.ru">i.a.kiselev@yandex.ru</a> (Киселёв&nbsp;И.&nbsp;А.)</p>
 			<p>Расписание Берчуна&nbsp;Ю.&nbsp;В. всегда можно найти в <a href="https://vk.com/decanat_rk">группе деканата</a>
 			<p>По сайту <a href="https://t.me/pvoronov">@pvoronov</a> или <a href="mailto:self@bopohob.ru">self@bopohob.ru</a> (Воронов&nbsp;П.&nbsp;С.)</p>

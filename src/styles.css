@@ -19,13 +19,21 @@ content a {
 	color: #2D373C;
 }
 
+.nomargin {
+	margin: 0px;
+}
 
-/*---------------fonts-----------------*/
+
 a {
 	text-decoration: none;
 }
 
+.nobr {
+	white-space:nowrap;
+}
 
+
+/*---------------fonts-----------------*/
 .font50 {
 	font-family: 'PT Mono';
 	font-size: 50px;
@@ -56,6 +64,13 @@ a {
 	font-weight: normal;
 	margin-bottom: 12px;
 }
+
+.font19 {
+	font-size: 19px;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+
 .padding85 {
 	padding: 85px;
 }
@@ -64,6 +79,11 @@ a {
 @media all and (min-width:560px) and (max-width:799px) {
 	.font14 {
 		font-size: 11px;
+		margin-bottom: 4px;
+	}
+	.font19 {
+		font-size: 15px;
+		margin-bottom: 6px;
 	}
 	.font24 {
 		font-size: 18px;
@@ -88,6 +108,9 @@ a {
 	.font14 {
 		font-size: 11px;
 	}
+	.font19 {
+		font-size: 14px;
+	}
 	.font24 {
 		font-size: 18px;
 		margin-bottom: 8px;
@@ -110,6 +133,11 @@ a {
 @media all and (max-width:399px) {
 	.font14 {
 		font-size: 11px;
+		margin-bottom: 0px;
+	}
+	.font19 {
+		font-size: 14px;
+		margin-bottom: 0px;
 	}
 	.font24 {
 		font-size: 18px;
@@ -130,6 +158,14 @@ a {
 }
 
 @media all and (max-width:399px) {
+	.font14 {
+		font-size: 11px;
+		margin-bottom: 0px;
+	}
+	.font19 {
+		font-size: 14px;
+		margin-bottom: 0px;
+	}
 	.font24 {
 		font-size: 12px;
 		margin-bottom: 8px;

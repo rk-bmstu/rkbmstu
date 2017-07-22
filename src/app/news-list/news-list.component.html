@@ -1,5 +1,5 @@
-<div>
-	<h2>Последние новости</h2>
+<div *ngIf="news.length != 0">
+	<h2 class="nomargin">Последние новости</h2>
 	<ul class="news-list">
 		<li class="novelty" *ngFor="let novelty of news">
 			<div class="image" [style.background-image]="novelty.image | cssUrl"><div class="blind"><img src={{novelty.image}}></div></div>

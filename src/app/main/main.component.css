@@ -165,7 +165,7 @@ section {
 	background-position-x: 50%;
 }
 
-.major, .minor,.sub {
+.major, .minor {
 	padding-bottom: 150px;
 }
 
@@ -264,8 +264,7 @@ section {
 /*----------------<399-----------------*/
 @media all and (max-width:399px) {
 	.major,
-	.minor,
-	.sub {
+	.minor {
 		padding-bottom: 20px !important;
 	}
 	.outer {

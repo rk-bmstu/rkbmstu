@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Novelty, NewsService } from '../news.service';
 
@@ -11,13 +11,11 @@ export class NewsListComponent implements OnInit {
 
   news : Novelty[];
 
-  constructor(private newsService : NewsService) { }
+  newsService : NewsService = new NewsService();
+
+  constructor() { }
 
   ngOnInit() {
     this.news = this.newsService.getNews();
-  }
-
-  mmm(url : string) {
-    return "url("+url+")";
   }
 }
