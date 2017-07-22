@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 
 /*---------------modifiers-----------------*/
+
+
 .left {
 	float: left;
 	background-color: #292933;
@@ -251,6 +253,10 @@ section {
 	.news-inner {
 		top: 720px;
 		left: 280px;
+	}
+
+	.news-inner h1 {
+		margin-top:0px;
 	}
 }
 
