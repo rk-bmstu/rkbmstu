@@ -15,6 +15,7 @@ import { NewsListComponent } from './news-list/news-list.component';
 import { NewsService } from './news.service';
 import { CssUrlPipe } from './css-url.pipe';
 import { Globals } from './globals';
+import { DataLoaderService } from './data-loader.service';
 
 
 @NgModule({
@@ -52,7 +53,10 @@ import { Globals } from './globals';
 
     BrowserModule
   ],
-  providers: [NewsService, Globals],
+  providers: [
+    NewsService,
+    Globals
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
