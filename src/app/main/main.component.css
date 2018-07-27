@@ -263,7 +263,9 @@ section {
 
 /*----------------<399-----------------*/
 @media all and (max-width:399px) {
-	.major,
+	.major {
+		padding-bottom: 120px !important;
+	}
 	.minor {
 		padding-bottom: 20px !important;
 	}
@@ -277,7 +279,7 @@ section {
 		float: left;
 	}
 	.news-outer {
-		height: 360px;
+		height: 460px;
 	}
 	section {
 		margin: 12px 20px;
